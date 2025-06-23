@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GhostWire Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <canvas id="bg-canvas"></canvas>
+    </div>
+    <form class="login-container" method="POST">
+        <h2>GhostWire</h2>
+        <p>Access your premium account or join our Discord community for subscriptions</p>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your username" required autofocus>
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+        <input type="submit" value="Sign In">
+        <div class="links">
+            New to GhostWire? <a href="https://discord.gg/56M2wSgqzF" target="_blank">Join our Discord</a><br>
+            <a href="https://t.me/taktikaltoaster" target="_blank">Forgot password?</a>
+        </div>
+    </form>
+    <script src="{{ url_for('static', filename='background.js') }}"></script>
+</body>
+</html>

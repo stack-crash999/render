@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GhostWire - Connected Clients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">GhostWire Made by x64dbd and тактический</div>
+    <div class="container">
+        <h2>Connected Clients</h2>
+        {% for client in clients %}
+            <div class="client-card">
+                <div class="client-name">{{ client.name }}</div>
+                <div class="client-ip">{{ client.ip }}</div>
+                <div class="links">
+                    <a href="/live?ip={{ client.ip }}">/live</a>
+                    <a href="/shell?ip={{ client.ip }}">/shell</a>
+                    <a href="/cmds?ip={{ client.ip }}">/cmds</a>
+                    <a href="/files?ip={{ client.ip }}">/files</a>
+                    <a href="/powershell?ip={{ client.ip }}">/powershell</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
