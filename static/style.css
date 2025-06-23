@@ -28,7 +28,7 @@ canvas {
 }
 
 .login-container {
-    background-color: #111222;
+    background-color: rgba(17, 18, 34, 0.9); /* <== make it slightly transparent */
     border-radius: 16px;
     padding: 40px 30px;
     width: 340px;
@@ -40,6 +40,7 @@ canvas {
     align-items: center;
     text-align: center;
 }
+
 
 .login-container h2 {
     font-size: 28px;

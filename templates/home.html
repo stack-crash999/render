@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>GhostWire - Connected Clients</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <div class="background">
+        <canvas id="bg-canvas"></canvas>
+    </div>
+
     <div class="header">GhostWire Made by x64dbd and тактический</div>
     <div class="container">
         <h2>Connected Clients</h2>
@@ -23,5 +27,7 @@
             </div>
         {% endfor %}
     </div>
+
+    <script src="{{ url_for('static', filename='background.js') }}"></script>
 </body>
 </html>
