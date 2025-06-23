@@ -4,31 +4,30 @@ html, body {
     height: 100vh;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
-    background: #0a0a23;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    background: #0a0a23;
 }
 
 .background {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, #1e0036, #0a0a23);
-    overflow: hidden;
     z-index: -1;
+    pointer-events: none; /* Ensures form inputs are clickable */
 }
 
 canvas {
-    position: absolute;
+    display: block;
     width: 100%;
     height: 100%;
-    display: block;
 }
 
 .login-container {
-    background-color: rgba(17, 18, 34, 0.9); /* <== make it slightly transparent */
+    background-color: rgba(17, 18, 34, 0.9); /* semi-transparent */
     border-radius: 16px;
     padding: 40px 30px;
     width: 340px;
@@ -39,7 +38,9 @@ canvas {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
 }
+
 
 
 .login-container h2 {
@@ -114,4 +115,26 @@ canvas {
     margin-bottom: 10px;
     text-align: center;
     width: 100%;
+}
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 20px;
+    background-color: rgba(17, 18, 34, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }

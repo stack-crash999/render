@@ -10,24 +10,27 @@
         <canvas id="bg-canvas"></canvas>
     </div>
 
-    <div class="header">GhostWire Made by x64dbd and тактический</div>
-    <div class="container">
-        <h2>Connected Clients</h2>
-        {% for client in clients %}
-            <div class="client-card">
-                <div class="client-name">{{ client.name }}</div>
-                <div class="client-ip">{{ client.ip }}</div>
-                <div class="links">
-                    <a href="/live?ip={{ client.ip }}">/live</a>
-                    <a href="/shell?ip={{ client.ip }}">/shell</a>
-                    <a href="/cmds?ip={{ client.ip }}">/cmds</a>
-                    <a href="/files?ip={{ client.ip }}">/files</a>
-                    <a href="/powershell?ip={{ client.ip }}">/powershell</a>
+    <div class="page-wrapper">
+        <div class="header">GhostWire Made by x64dbd and тактический</div>
+        <div class="container">
+            <h2>Connected Clients</h2>
+            {% for client in clients %}
+                <div class="client-card">
+                    <div class="client-name">{{ client.name }}</div>
+                    <div class="client-ip">{{ client.ip }}</div>
+                    <div class="links">
+                        <a href="/live?ip={{ client.ip }}">/live</a>
+                        <a href="/shell?ip={{ client.ip }}">/shell</a>
+                        <a href="/cmds?ip={{ client.ip }}">/cmds</a>
+                        <a href="/files?ip={{ client.ip }}">/files</a>
+                        <a href="/powershell?ip={{ client.ip }}">/powershell</a>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 
     <script src="{{ url_for('static', filename='background.js') }}"></script>
 </body>
+
 </html>
